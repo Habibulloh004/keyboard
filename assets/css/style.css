@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+  body.active {
+    background-color: #333; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  position: relative; }
+  .container .changeLightColor {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 40px;
+    right: 25%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .container .changeLightColor .colors .colorsInput {
+      width: 80px;
+      height: 40px;
+      background-color: transparent;
+      border: none;
+      outline: none; }
+  .container .text.active {
+    background-color: #222; }
+  .container .nightMode {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    top: 50px;
+    right: 20%;
+    background-color: #333;
+    border-radius: 50px; }
+    .container .nightMode.active {
+      background-color: white; }
+    .container .nightMode .toggleCircle {
+      -webkit-transform: translateY(8%);
+              transform: translateY(8%);
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      left: 0;
+      position: absolute;
+      border-radius: 50%;
+      background-color: white; }
+      .container .nightMode .toggleCircle.active {
+        margin-left: 2em;
+        background-color: #333; }
+  .container .keyboardWrapper {
+    border-radius: 5px;
+    background: #f7f7f7;
+    max-width: 1008px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2; }
+    .container .keyboardWrapper.active {
+      background-color: blue; }
+    .container .keyboardWrapper .keyboardKeys .row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0 auto; }
+      .container .keyboardWrapper .keyboardKeys .row .key {
+        width: 60px;
+        height: 60px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        background-color: white;
+        margin: 4px;
+        border-radius: 2px;
+        z-index: 999; }
+        .container .keyboardWrapper .keyboardKeys .row .key.key_night {
+          background-color: #444;
+          color: white; }
+          .container .keyboardWrapper .keyboardKeys .row .key.key_night.active {
+            background-color: white;
+            color: #444; }
+          .container .keyboardWrapper .keyboardKeys .row .key.key_night.remove {
+            -webkit-animation: key_night_animation 0.5s forwards;
+                    animation: key_night_animation 0.5s forwards; }
+        .container .keyboardWrapper .keyboardKeys .row .key.active {
+          background-color: #333;
+          color: white; }
+        .container .keyboardWrapper .keyboardKeys .row .key.remove {
+          -webkit-animation: keysAnimation 0.5s forwards;
+                  animation: keysAnimation 0.5s forwards; }
+      .container .keyboardWrapper .keyboardKeys .row .Ef {
+        position: relative; }
+        .container .keyboardWrapper .keyboardKeys .row .Ef::before {
+          content: "";
+          width: 15px;
+          position: absolute;
+          height: 3px;
+          background-color: #333;
+          bottom: 10px;
+          border-radius: 3px; }
+      .container .keyboardWrapper .keyboardKeys .row .Jey {
+        position: relative; }
+        .container .keyboardWrapper .keyboardKeys .row .Jey::before {
+          content: "";
+          width: 15px;
+          position: absolute;
+          height: 3px;
+          background-color: #333;
+          bottom: 10px;
+          border-radius: 3px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_Backspace {
+        width: 120px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_Slash {
+        width: 80px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_Tab {
+        width: 95px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_CapsLock {
+        width: 110px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_Enter {
+        width: 135px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_LeftShift {
+        width: 145px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_RightShift {
+        width: 170px; }
+      .container .keyboardWrapper .keyboardKeys .row .key_Space {
+        width: 595px; }
+    .container .keyboardWrapper .keyboardLights {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #9f9f9f; }
+  .container .text {
+    max-width: 1008px;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding-left: 10px;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    .container .text.active {
+      color: white; }
+
+@-webkit-keyframes keysAnimation {
+  0% {
+    background-color: #333;
+    color: white; }
+  100% {
+    background-color: white;
+    color: black; } }
+
+@keyframes keysAnimation {
+  0% {
+    background-color: #333;
+    color: white; }
+  100% {
+    background-color: white;
+    color: black; } }
+
+@-webkit-keyframes key_night_animation {
+  0% {
+    background-color: white;
+    color: #444; }
+  100% {
+    background-color: #444;
+    color: white; } }
+
+@keyframes key_night_animation {
+  0% {
+    background-color: white;
+    color: #444; }
+  100% {
+    background-color: #444;
+    color: white; } }
+/*# sourceMappingURL=style.css.map */

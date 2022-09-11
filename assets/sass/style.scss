@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    &.active {
+        background-color: #333;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+
+    .changeLightColor {
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        top: 40px;
+        right: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .colors {
+            .colorsInput {
+                width: 80px;
+                height: 40px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .text {
+        &.active {
+            background-color: #222;
+        }
+    }
+
+    .nightMode {
+        width: 60px;
+        height: 30px;
+        position: absolute;
+        top: 50px;
+        right: 20%;
+        background-color: #333;
+        border-radius: 50px;
+
+
+        &.active {
+            background-color: white;
+        }
+
+        .toggleCircle {
+            transform: translateY(8%);
+            width: 25px;
+            height: 25px;
+            margin: 0 5px;
+            left: 0;
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+
+            &.active {
+                margin-left: 2em;
+                background-color: #333;
+            }
+        }
+    }
+
+    .keyboardWrapper {
+        border-radius: 5px;
+        background: #f7f7f7;
+        max-width: 1008px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        order: 2;
+
+        &.active {
+            background-color: blue;
+        }
+
+        .keyboardKeys {
+            .row {
+                display: flex;
+                margin: 0 auto;
+
+                .key {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    margin: 4px;
+                    border-radius: 2px;
+                    z-index: 999;
+
+                    &.key_night {
+                        background-color: #444;
+                        color: white;
+
+                        &.active {
+                            background-color: white;
+                            color: #444;
+                        }
+
+                        &.remove {
+                            animation: key_night_animation 0.5s forwards;
+                        }
+                    }
+
+                    &.active {
+                        background-color: #333;
+                        color: white;
+                    }
+
+                    &.remove {
+                        animation: keysAnimation 0.5s forwards;
+                    }
+                }
+
+                .Ef {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        width: 15px;
+                        position: absolute;
+                        height: 3px;
+                        background-color: #333;
+                        bottom: 10px;
+                        border-radius: 3px;
+                    }
+                }
+
+                .Jey {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        width: 15px;
+                        position: absolute;
+                        height: 3px;
+                        background-color: #333;
+                        bottom: 10px;
+                        border-radius: 3px;
+                    }
+                }
+
+                .key_Backspace {
+                    width: 120px;
+                }
+
+                .key_Slash {
+                    width: 80px;
+                }
+
+                .key_Tab {
+                    width: 95px;
+                }
+
+                .key_CapsLock {
+                    width: 110px;
+                }
+
+                .key_Enter {
+                    width: 135px;
+                }
+
+                .key_LeftShift {
+                    width: 145px;
+                }
+
+                .key_RightShift {
+                    width: 170px;
+                }
+
+                .key_Space {
+                    width: 595px;
+                }
+            }
+        }
+
+        .keyboardLights {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #9f9f9f;
+        }
+
+    }
+
+    .text {
+        max-width: 1008px;
+        width: 100%;
+        height: 10vh;
+        margin-bottom: 10px;
+        border: none;
+        outline: none;
+        font-size: 25px;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        padding-left: 10px;
+        transition: .2s;
+
+        &.active {
+            color: white;
+        }
+    }
+}
+
+@keyframes keysAnimation {
+    0% {
+        background-color: #333;
+        color: white;
+    }
+
+    100% {
+        background-color: white;
+        color: black;
+    }
+}
+
+@keyframes key_night_animation {
+    0% {
+        background-color: white;
+        color: #444;
+    }
+
+    100% {
+        background-color: #444;
+        color: white;
+    }
+}
